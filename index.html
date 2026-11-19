@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>AYEGLE — École Spirituelle</title>
+  <meta name="description" content="AYEGLE — École spirituelle. Apprendre, Pratiquer, Transmettre. ÉBOGA, OMBIRI, DISSOUMBA.">
+  <meta name="theme-color" content="#07110D">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- DESIGN SACRE PREMIUM -->
+  <link rel="stylesheet" href="css/app.css">
+
+  <!-- REACT - NE PAS TOUCHER -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- ========== 1. COEUR ========== -->
+  <script src="js/core/storage.js"></script>
+
+  <!-- ========== 2. DONNEES - DANS CET ORDRE ========== -->
+  <script src="js/data/quotes.js"></script>
+  <script src="js/data/ebogaContent.js"></script>
+  <script src="js/data/ombiriContent.js"></script>
+  <script src="js/data/dissoumbaData.js"></script>
+
+  <!-- ========== 3. COMPOSANTS ========== -->
+  <script src="js/components/QuoteCard.js"></script>
+  <script src="js/components/PageHeader.js"></script>
+  <script src="js/components/BottomNav.js"></script>
+
+  <!-- ========== 4. PAGES - 3 PAGES AYEGLE SEULEMENT ========== -->
+  <!-- MBOKA MENGANGA : on ne touche pas -->
+  <script src="js/pages/Home.js"></script>
+  <script src="js/pages/Eboga.js"></script>
+  <script src="js/pages/Ombiri.js"></script>
+  <script src="js/pages/Dissoumba.js"></script>
+  <script src="js/pages/Kengue.js"></script>
+
+  <!-- ========== 5. APP - TOUJOURS EN DERNIER ========== -->
+  <script src="js/app.js"></script>
+</body>
+</html>

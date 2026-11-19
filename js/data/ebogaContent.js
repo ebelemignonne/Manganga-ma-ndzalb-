@@ -1,0 +1,16 @@
+// AYEGLE - js/data/ebogaContent.js - DONNEES EBOGA SEULEMENT
+// Regle : jamais de logique ici, juste les contenus.
+// Pour ajouter un contenu : copie un objet complet, change id, titre, texte.
+window.Ayegle = window.Ayegle || {}; window.Ayegle.data = window.Ayegle.data || {};
+window.Ayegle.data.ebogaContent = [
+  { id: "eb-1", cat: "Enseignements", titre: "L'écoute du coeur", texte: "Prendre 5 minutes de silence avant chaque enseignement. Assieds-toi, respire lentement, écoute ton coeur avant d'écouter les paroles. C'est là que commence la vraie compréhension.", duree: "5 min", niveau: "Débutant" },
+  { id: "eb-2", cat: "Enseignements", titre: "La marche consciente", texte: "Marcher lentement, respirer, observer sans juger. Chaque pas est une prière. Ne cours pas après la sagesse, avance vers elle, un pas après l'autre.", duree: "10 min", niveau: "Débutant" },
+  { id: "eb-3", cat: "Enseignements", titre: "Le partage", texte: "Transmettre ce qu'on a reçu, sans le garder pour soi. La lumière ne diminue pas quand on la partage, elle grandit. Enseigne à un autre ce que tu as appris aujourd'hui.", duree: "7 min", niveau: "Intermédiaire" },
+  { id: "eb-4", cat: "Enseignements", titre: "Le respect des anciens", texte: "Écouter ceux qui ont marché avant nous. Leurs paroles sont des cartes. Tu n'as pas besoin d'être d'accord avec tout, mais tu dois écouter avec respect.", duree: "8 min", niveau: "Tous" },
+  { id: "eb-5", cat: "Prières", titre: "Prière du matin", texte: "Au réveil, avant de toucher ton téléphone : remercie pour la nuit, demande la clarté pour la journée, et promets-toi d'agir avec douceur. Répète-la 3 fois, lentement.", duree: "3 min", niveau: "Débutant" },
+  { id: "eb-6", cat: "Prières", titre: "Prière de protection", texte: "Avant de sortir, demande la protection pour toi et les tiens. Visualise une lumière autour de toi, comme un manteau. Marche avec confiance, sans peur.", duree: "4 min", niveau: "Tous" },
+  { id: "eb-7", cat: "Prières", titre: "Prière du soir", texte: "Le soir, fais le bilan : qu'as-tu appris ? Qu'as-tu donné ? Pardonne-toi tes erreurs, remercie pour les bonnes choses, et dors en paix.", duree: "5 min", niveau: "Tous" },
+  { id: "eb-8", cat: "Pratique", titre: "Respiration sacrée", texte: "Inspire 4 temps, retiens 4 temps, expire 6 temps. Fais 5 cycles. C'est la pratique la plus simple et la plus puissante pour calmer le mental avant tout rituel.", duree: "5 min", niveau: "Débutant" },
+  { id: "eb-9", cat: "Pratique", titre: "Journal de gratitude", texte: "Chaque soir, écris 3 choses pour lesquelles tu es reconnaissant. Pas besoin de grandes choses : un repas, un sourire, un moment de calme. Cela change ton regard en 7 jours.", duree: "5 min", niveau: "Débutant" },
+  { id: "eb-10", cat: "Pratique", titre: "Silence de 10 minutes", texte: "Coupe le téléphone, assieds-toi, ne fais rien pendant 10 minutes. Au début c'est difficile. Après 3 jours, ton esprit devient plus clair. C'est un entraînement, pas une punition.", duree: "10 min", niveau: "Intermédiaire" }
+];

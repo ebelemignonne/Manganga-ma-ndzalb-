@@ -1,0 +1,191 @@
+/* ============================================================
+   AYEGLE - css/app.css - DESIGN SACRE PREMIUM V4
+   Direction : Temple / Livre ancien / Rituel
+   Fini le bleu technologique. Place a l'or sacre.
+   MBOKA : on ne touche pas.
+   ============================================================ */
+
+* { box-sizing: border-box; }
+
+:root {
+  --bg: #07110D;
+  --bg-2: #0A1A12;
+  --card: #0E2118;
+  --card-2: #12291E;
+  --gold: #D4AF37;
+  --gold-light: #F5D67A;
+  --gold-dim: rgba(212, 175, 55, 0.28);
+  --paper: #F5EFE0;
+  --muted: #A8B5A0;
+  --muted-2: #7A8A72;
+  --border: rgba(212, 175, 55, 0.22);
+  --radius: 24px;
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+  --serif: Georgia, "Times New Roman", serif;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--paper);
+  padding-bottom: 100px;
+  -webkit-tap-highlight-color: transparent;
+  line-height: 1.6;
+}
+
+.app { max-width: 520px; margin: 0 auto; }
+.page { padding: 18px 18px 10px; animation: fadeUp 0.45s ease both; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ---------- TEXTES SACRES ---------- */
+h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.2; }
+h1 { font-size: 2.1rem; letter-spacing: 1.5px; margin: 0; }
+h2 { font-size: 1.5rem; margin: 28px 2px 8px; }
+h3 { font-size: 1.18rem; margin: 0 0 8px; }
+p { margin: 8px 0; }
+.hint { color: var(--muted); font-size: 0.92rem; text-align: center; }
+.eyebrow {
+  font-size: 0.72rem; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); font-weight: 800; margin: 0 0 8px;
+}
+.gold-line {
+  width: 48px; height: 2px; background: linear-gradient(90deg, var(--gold), transparent);
+  margin: 12px auto 0; border-radius: 2px;
+}
+
+/* ---------- BARRE DU HAUT SACREE ---------- */
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 4px 10px;
+}
+.topbar .brand { display: flex; align-items: center; gap: 10px; }
+.topbar .logo-circle {
+  width: 42px; height: 42px; border-radius: 50%;
+  border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem; background: rgba(212, 175, 55, 0.12);
+}
+.topbar b { font-family: var(--serif); letter-spacing: 3px; font-size: 1.05rem; }
+.topbar small { display: block; color: var(--muted); font-size: 0.75rem; letter-spacing: 1px; }
+.topbar .streak {
+  background: rgba(212, 175, 55, 0.12); border: 1px solid var(--border);
+  border-radius: 999px; padding: 7px 12px; font-size: 0.85rem; font-weight: 700; color: var(--gold-light);
+}
+
+/* ---------- HERO TEMPLE ---------- */
+.hero {
+  position: relative; overflow: hidden;
+  border-radius: 28px; padding: 36px 20px 30px; text-align: center;
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(420px 220px at 50% -60px, rgba(212, 175, 55, 0.28), transparent 70%),
+    linear-gradient(160deg, #0E3B2E, #071F16);
+  box-shadow: var(--shadow);
+}
+.hero::before {
+  content: ""; position: absolute; inset: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.18); border-radius: 20px; pointer-events: none;
+}
+.hero h1 { font-size: 2.7rem; letter-spacing: 6px; }
+.hero p { color: #D8E2D0; margin: 12px 0 0; }
+.emoji-big { font-size: 3.4rem; filter: drop-shadow(0 10px 18px rgba(0,0,0,0.5)); }
+.hero-eboga { background: radial-gradient(420px 220px at 50% -60px, rgba(212,175,55,0.30), transparent 70%), linear-gradient(160deg, #0E3B2E, #071F16); }
+.hero-ombiri { background: radial-gradient(420px 220px at 50% -60px, rgba(120,190,255,0.22), transparent 70%), linear-gradient(160deg, #0A1E33, #071426); }
+.hero-dissoumba { background: radial-gradient(420px 220px at 50% -60px, rgba(255,122,26,0.25), transparent 70%), linear-gradient(160deg, #33180A, #1A0D05); }
+
+/* ---------- CARTE CITATION - PIECE CENTRALE ---------- */
+.quote-card {
+  background: linear-gradient(180deg, #12291E, #0E2118);
+  border: 1px solid var(--border); border-radius: 28px; padding: 26px 22px;
+  margin-top: 16px; text-align: center; box-shadow: var(--shadow); position: relative;
+}
+.quote-card::before { content: "“"; position: absolute; top: 6px; left: 50%; transform: translateX(-50%); font-family: var(--serif); font-size: 4rem; color: var(--gold); opacity: 0.35; line-height: 1; }
+.quote { font-family: var(--serif); font-style: italic; font-size: 1.38rem; line-height: 1.5; margin: 28px 0 12px; }
+.author { color: var(--gold); font-size: 0.88rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; margin: 0 0 18px; }
+
+/* ---------- PROGRESSION DU JOUR ---------- */
+.progress-row { display: flex; gap: 12px; margin-top: 16px; }
+.progress-card {
+  flex: 1; background: var(--card); border: 1px solid var(--border);
+  border-radius: 20px; padding: 16px; text-align: center;
+}
+.progress-card b { font-family: var(--serif); font-size: 1.6rem; color: var(--gold-light); display: block; }
+.progress-card span { color: var(--muted); font-size: 0.82rem; }
+.progress-bar { height: 6px; background: rgba(255,255,255,0.10); border-radius: 999px; overflow: hidden; margin-top: 10px; }
+.progress-bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); border-radius: 999px; }
+
+/* ---------- CARTES ---------- */
+.card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 18px; margin-top: 14px; box-shadow: var(--shadow);
+}
+.card:active { transform: scale(0.99); }
+
+/* ---------- BOUTONS ---------- */
+button {
+  cursor: pointer; border: 0; border-radius: 14px;
+  padding: 13px 18px; font-weight: 800; font-size: 0.98rem;
+  background: linear-gradient(135deg, #D4AF37, #F5D67A); color: #1A1200;
+  box-shadow: 0 10px 22px rgba(212, 175, 55, 0.28);
+  transition: transform 0.12s ease;
+}
+button:active { transform: scale(0.97); }
+button.ghost {
+  background: transparent; color: var(--gold-light);
+  border: 1px solid var(--border); box-shadow: none;
+}
+.back {
+  background: rgba(255,255,255,0.07); color: var(--paper);
+  border: 1px solid var(--border); box-shadow: none; margin-bottom: 12px;
+}
+
+/* ---------- GRANDES CARTES CHEMINS ---------- */
+.grid { display: grid; gap: 14px; margin-top: 12px; }
+.big-card {
+  display: flex; align-items: center; gap: 16px; text-align: left;
+  padding: 20px 18px; background: var(--card); color: var(--paper);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow); position: relative;
+}
+.big-card .icon-circle {
+  width: 56px; height: 56px; flex-shrink: 0; border-radius: 50%;
+  border: 1px solid var(--gold); background: rgba(212,175,55,0.12);
+  display: flex; align-items: center; justify-content: center; font-size: 1.7rem;
+}
+.big-card b { font-family: var(--serif); font-size: 1.15rem; letter-spacing: 1px; display: block; }
+.big-card small { color: var(--muted); font-weight: 400; line-height: 1.4; display: block; margin-top: 3px; }
+.big-card .arrow { margin-left: auto; color: var(--gold); font-size: 1.3rem; }
+
+/* ---------- ONGLETS ---------- */
+.tabs { display: flex; gap: 8px; margin-top: 16px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.tab {
+  background: rgba(255,255,255,0.06); color: var(--paper);
+  border: 1px solid var(--border); border-radius: 999px;
+  padding: 10px 16px; white-space: nowrap; box-shadow: none; font-weight: 700;
+}
+.tab.active { background: var(--gold); color: #1A1200; border-color: transparent; }
+
+/* ---------- LIGNES / CHAMPS ---------- */
+.row { display: flex; justify-content: space-between; gap: 10px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.row:last-child { border-bottom: 0; }
+.row span { color: var(--muted); text-align: right; font-size: 0.92rem; }
+textarea, input {
+  width: 100%; background: rgba(0,0,0,0.35); color: #fff;
+  border: 1px solid var(--border); border-radius: 14px; padding: 12px;
+  font-size: 1rem; font-family: inherit; outline: none;
+}
+textarea:focus, input:focus { border-color: var(--gold); }
+
+/* ---------- BARRE DU BAS ---------- */
+.bottom-nav {
+  position: fixed; left: 0; right: 0; bottom: 0; max-width: 520px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  background: rgba(7, 17, 13, 0.92); backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border); padding: 10px 8px calc(10px + env(safe-area-inset-bottom)); z-index: 50;
+}
+.bottom-nav button {
+  background: transparent; color: var(--muted); font-size: 0.82rem;
+  box-shadow: none; padding: 10px 4px; border-radius: 14px; font-weight: 700;
+}
+.bottom-nav button.active { color: var(--gold-light); background: rgba(212, 175, 55, 0.14); }

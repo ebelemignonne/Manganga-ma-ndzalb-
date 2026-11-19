@@ -1,0 +1,10 @@
+{
+  "name": "AYEGLE",
+  "short_name": "AYEGLE",
+  "description": "École spirituelle — Apprendre, Pratiquer, Transmettre",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#07110D",
+  "theme_color": "#07110D",
+  "icons": []
+}

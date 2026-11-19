@@ -1,0 +1,57 @@
+// AYEGLE - App.jsx - ETAPE 1 : Base React + Navigation 3 pages
+// MBOKA MENGANGA : non touche pour le moment
+const { useState, useEffect } = React;
+
+const QUOTES = [
+  { id: 1, texte: "La sagesse commence par l'ecoute du coeur.", auteur: "Sagesse Eboga" },
+  { id: 2, texte: "Celui qui connait ses racines ne se perd jamais.", auteur: "Sagesse Ombiri" },
+  { id: 3, texte: "La lumiere se partage, elle ne se perd pas.", auteur: "Sagesse Dissoumba" },
+];
+
+function Home({ go }) {
+  const [quote, setQuote] = useState(QUOTES[0]);
+  useEffect(() => {
+    const saved = localStorage.getItem("ayegle_quote_id");
+    if (saved) { const f = QUOTES.find(q => String(q.id) === saved); if (f) setQuote(f); }
+  }, []);
+  const newQuote = () => {
+    const next = QUOTES[Math.floor(Math.random() * QUOTES.length)];
+    setQuote(next);
+    try { localStorage.setItem("ayegle_quote_id", String(next.id)); } catch(e){ console.error("[ayegle] save quote", e); }
+  };
+  return (
+    <div className="page">
+      <header className="hero"><h1>AYEGLE</h1><p>Apprendre • Pratiquer • Transmettre</p></header>
+      <div className="card quote-card"><p className="quote">“{quote.texte}”</p><p className="author">— {quote.auteur}</p>
+      <button onClick={newQuote}>✨ Nouvelle citation</button></div>
+      <h2>Choisis ta page</h2>
+      <div className="grid">
+        <button className="big-card eboga" onClick={() => go("eboga")}><span>🌿</span><b>AYEGLE EBOGA</b><small>Enseignements, prieres, pratique</small></button>
+        <button className="big-card ombiri" onClick={() => go("ombiri")}><span>🌊</span><b>AYEGLE OMBIRI</b><small>Temple de la Sagesse</small></button>
+        <button className="big-card dissoumba" onClick={() => go("dissoumba")}><span>🔥</span><b>AYEGLE DISSOUMBA</b><small>Notes, rituels, memoire</small></button>
+      </div>
+      <p className="hint">Etape 1 reussie si tu vois cette page dans Spck.</p>
+    </div>
+  );
+}
+function SimplePage({ title, emoji, color, go }) {
+  return (<div className="page"><button className="back" onClick={() => go("home")}>← Retour</button>
+  <header className="hero" style={{background: color}}><div className="emoji-big">{emoji}</div><h1>{title}</h1><p>Etape 2 : on mettra ici ton vrai contenu, sans rien tronquer.</p></header>
+  <div className="card"><h3>Que contiendra cette page ?</h3><ul><li>✅ Tes textes et prieres d'origine</li><li>✅ Tes citations</li><li>✅ Tes favoris et ta corbeille</li><li>✅ Sauvegarde automatique en ayegle_</li></ul></div></div>);
+}
+function App() {
+  const [page, setPage] = useState("home");
+  return (<div className="app">
+    {page === "home" && <Home go={setPage} />}
+    {page === "eboga" && <SimplePage title="AYEGLE EBOGA" emoji="🌿" color="linear-gradient(135deg,#0a3d2e,#0f6b4a)" go={setPage} />}
+    {page === "ombiri" && <SimplePage title="AYEGLE OMBIRI" emoji="🌊" color="linear-gradient(135deg,#0a2a4a,#0a5a8a)" go={setPage} />}
+    {page === "dissoumba" && <SimplePage title="AYEGLE DISSOUMBA" emoji="🔥" color="linear-gradient(135deg,#4a1a0a,#8a2a0a)" go={setPage} />}
+    <nav className="bottom-nav">
+      <button className={page==="home"?"active":""} onClick={()=>setPage("home")}>🏠 Accueil</button>
+      <button className={page==="eboga"?"active":""} onClick={()=>setPage("eboga")}>🌿 Eboga</button>
+      <button className={page==="ombiri"?"active":""} onClick={()=>setPage("ombiri")}>🌊 Ombiri</button>
+      <button className={page==="dissoumba"?"active":""} onClick={()=>setPage("dissoumba")}>🔥 Dissoumba</button>
+    </nav>
+  </div>);
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);

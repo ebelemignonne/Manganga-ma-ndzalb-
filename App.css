@@ -1,0 +1,10 @@
+*{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#070b12;color:#eef4ff;padding-bottom:80px}
+.app{max-width:520px;margin:0 auto}.page{padding:16px}.hero{background:linear-gradient(135deg,#0a3d2e,#0f6b4a);border-radius:20px;padding:28px 18px;text-align:center}
+.hero h1{margin:0;font-size:2rem;letter-spacing:2px}.hero p{opacity:.9}.card{background:#0d1626;border:1px solid #1e3a5f;border-radius:16px;padding:16px;margin-top:14px}
+.quote{font-size:1.15rem;line-height:1.5}.author{text-align:right;color:#9fb3cc}
+button{cursor:pointer;border:0;border-radius:12px;padding:12px 16px;background:#00d2ff;color:#00121f;font-weight:800}
+.grid{display:grid;gap:12px;margin-top:12px}.big-card{display:flex;flex-direction:column;gap:4px;text-align:left;padding:18px;background:#0d1626;color:#fff;border:1px solid #1e3a5f;font-size:1rem}
+.big-card span{font-size:1.8rem}.big-card small{color:#9fb3cc;font-weight:400}
+.bottom-nav{position:fixed;left:0;right:0;bottom:0;max-width:520px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);background:#0a1220;border-top:1px solid #1e3a5f;padding:8px}
+.bottom-nav button{background:transparent;color:#9fb3cc;font-size:.85rem}.bottom-nav button.active{color:#00d2ff;background:#12263f}
+.back{background:#12263f;color:#fff;margin-bottom:12px}.emoji-big{font-size:3rem}.hint{color:#9fb3cc;font-size:.9rem;text-align:center}

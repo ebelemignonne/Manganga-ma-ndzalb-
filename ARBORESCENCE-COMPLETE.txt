@@ -1,0 +1,47 @@
+AYEGLE-REACT/  (projet complet - MBOKA MENGANGA : NE PAS TOUCHER, dossier separe)
+|
++-- index.html  (chargeur : React CDN + ordre des scripts, RIEN d'autre)
++-- README.md
++-- css/
+|   +-- app.css  (tout le design premium, 1 seul fichier pour l'instant)
+|   +-- pages/  (plus tard : eboga.css, ombiri.css, dissoumba.css - 1 par page)
+|
++-- js/
+|   +-- core/  (NE JAMAIS mettre de design ou de texte ici)
+|   |   +-- storage.js  (SEUL fichier qui touche localStorage - cles ayegle_ + migration)
+|   |   +-- router.js  (plus tard : si on passe a Vite / React Router)
+|   |   +-- drive.js  (plus tard : sauvegarde Google Drive)
+|   |
+|   +-- data/  (DONNEES SEULEMENT, jamais de logique)
+|   |   +-- quotes.js  (citations EBOGA / OMBIRI / DISSOUMBA)
+|   |   +-- essama.js  (pratiquants - plus tard, separe de quotes.js)
+|   |   +-- ebogaContent.js  (plus tard : vrais enseignements EBOGA complets)
+|   |   +-- ombiriContent.js  (plus tard : prieres OMBIRI completes)
+|   |   +-- dissoumbaContent.js  (plus tard : rituels DISSOUMBA complets)
+|   |
+|   +-- components/  (REUTILISABLES par les 3 pages)
+|   |   +-- BottomNav.js  (barre du bas - 1 seul endroit)
+|   |   +-- PageHeader.js  (titre + retour)
+|   |   +-- QuoteCard.js  (carte citation)
+|   |   +-- (plus tard) FavoriteButton.js, TrashButton.js, SearchBar.js
+|   |
+|   +-- pages/  (1 fichier = 1 page, JAMAIS 2 pages dans le meme fichier)
+|   |   +-- Home.js  (accueil + choix des 3 pages)
+|   |   +-- Eboga.js  (EBOGA : onglets, favoris, contenu)
+|   |   +-- Ombiri.js  (OMBIRI : temple, essama, prieres, corbeille)
+|   |   +-- Dissoumba.js  (DISSOUMBA : notes, rituels, memoire)
+|   |
+|   +-- app.js  (POINT D'ENTREE : routage seulement, aucune logique metier)
+|
++-- assets/
+    +-- images/  (mer.jpg, mere.jpg, masques...)
+    +-- audio/  (plus tard : sons de pratique)
+
+REGLES ANTI-REGRESSION (a respecter a chaque etape) :
+1. 1 fichier = 1 responsabilite. Si un fichier fait 2 choses, on le coupe en 2.
+2. localStorage : UNIQUEMENT via js/core/storage.js, cles ayegle_.
+3. Donnees : UNIQUEMENT dans js/data/. Jamais de texte en dur dans app.js.
+4. Design : UNIQUEMENT dans css/. Jamais de style en dur sauf cas precis.
+5. Une page ne touche JAMAIS une autre page. Eboga.js ne modifie pas Ombiri.js.
+6. Avant d'ajouter une fonction, verifier qu'elle n'existe pas deja dans components/.
+7. Tester apres CHAQUE fichier : apercu Spck -> si ca casse, on annule le dernier fichier seulement.
